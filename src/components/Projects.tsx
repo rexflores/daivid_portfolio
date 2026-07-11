@@ -70,7 +70,7 @@ export function Projects() {
                   setActiveRepo(project.githubUrl.replace('https://github.com/', ''));
                 }
               }}
-              className={`relative w-full h-[250px] md:h-full md:min-h-[300px] rounded border border-border-primary overflow-hidden shadow-lg bg-bg-secondary group ${project.githubUrl ? 'cursor-pointer' : ''}
+              className={`relative z-0 w-full h-[250px] md:h-full md:min-h-[300px] rounded border border-border-primary overflow-hidden shadow-lg bg-bg-secondary group ${project.githubUrl ? 'cursor-pointer' : ''}
               ${i % 2 !== 0 ? 'md:col-start-6 md:col-end-13' : 'md:col-start-1 md:col-end-8'}
               md:row-start-1 md:row-end-2 mb-6 md:mb-0`}
             >
