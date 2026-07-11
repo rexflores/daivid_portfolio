@@ -8,10 +8,16 @@ export function LiveViewers() {
   const sessionIdRef = useRef<string>("");
 
   useEffect(() => {
-    // Generate an anonymous session ID for this visitor on first load
-    if (!sessionIdRef.current) {
-      sessionIdRef.current = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    // Try to get existing session ID from localStorage to persist across reloads
+    let sessionId = localStorage.getItem("portfolio_session_id");
+    
+    if (!sessionId) {
+      // Generate a new anonymous session ID and save it
+      sessionId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+      localStorage.setItem("portfolio_session_id", sessionId);
     }
+    
+    sessionIdRef.current = sessionId;
 
     const fetchViewers = async () => {
       try {
