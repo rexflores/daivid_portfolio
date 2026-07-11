@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import { LiveViewers } from "./LiveViewers";
 
 export function Hero() {
   const [manilaTime, setManilaTime] = useState("--:--:-- --");
@@ -85,6 +86,8 @@ export function Hero() {
       />
       
       <div className="flex-1 max-w-[720px] z-10">
+        <LiveViewers />
+        
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
