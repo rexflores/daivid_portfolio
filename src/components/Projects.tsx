@@ -16,7 +16,7 @@ export function Projects() {
       techStack: ["Python", "Tkinter", "Windows"],
       githubUrl: "https://github.com/rexflores/PDFRecordManager",
       liveUrl: "",
-      image: "/images/projects/pdf-manager.png",
+      image: "/images/projects/pdf-manager-v2.png",
       featured: true,
     },
     {
