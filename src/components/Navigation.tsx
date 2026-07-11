@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { useTheme } from "./ThemeProvider";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, Gamepad2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { GameModal } from "./GameModal";
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [gameModalOpen, setGameModalOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const { theme, toggleTheme } = useTheme();
 
@@ -77,6 +79,21 @@ export function Navigation() {
         </ul>
 
         <div className="flex items-center gap-3">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex items-center justify-center font-mono text-[0.75rem] font-bold px-4 py-2 rounded-full border border-accent text-accent hover:bg-accent hover:text-[#0D0D0D] transition-colors duration-300"
+          >
+            resume
+          </a>
+          <button
+            onClick={() => setGameModalOpen(true)}
+            className="w-9 h-9 border-none bg-transparent cursor-pointer flex items-center justify-center rounded-full transition-colors hover:bg-accent-dim text-text-secondary hover:text-accent"
+            aria-label="Play game"
+          >
+            <Gamepad2 size={20} />
+          </button>
           <button
             onClick={toggleTheme}
             className="w-9 h-9 border-none bg-transparent cursor-pointer flex items-center justify-center rounded-full transition-colors hover:bg-accent-dim text-accent relative"
@@ -113,8 +130,19 @@ export function Navigation() {
               {link.name}
             </a>
           ))}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="font-mono text-sm px-4 py-2.5 rounded-xl text-accent border border-accent/30 bg-accent/5 hover:bg-accent-dim lowercase mt-2 text-center"
+          >
+            download resume
+          </a>
         </div>
       )}
+
+      <GameModal isOpen={gameModalOpen} onClose={() => setGameModalOpen(false)} />
     </>
   );
 }
