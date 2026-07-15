@@ -42,7 +42,7 @@ export function GithubModal({ repoName, isOpen, onClose }: GithubModalProps) {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-7xl max-h-[90vh] bg-[#0d1117] rounded-xl shadow-2xl border border-[#30363d] overflow-y-auto flex flex-col"
+            className="relative w-full max-w-7xl max-h-[80vh] mt-24 bg-[#0d1117] rounded-xl shadow-2xl border border-[#30363d] overflow-y-auto flex flex-col"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-[#30363d] sticky top-0 bg-[#0d1117]/90 backdrop-blur-md z-10">
