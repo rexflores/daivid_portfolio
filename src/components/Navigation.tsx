@@ -119,27 +119,35 @@ export function Navigation() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed top-[75px] left-2 right-2 bg-nav-bg backdrop-blur-xl border border-border-primary rounded-2xl p-3 flex flex-col gap-1 z-[9998]">
-          {navLinks.map((link) => (
+        <>
+          {/* Invisible backdrop to close menu on outside click */}
+          <div 
+            className="md:hidden fixed inset-0 z-[9997]" 
+            onClick={() => setMobileMenuOpen(false)} 
+            aria-label="Close menu overlay"
+          />
+          <div className="md:hidden fixed top-[75px] left-2 right-2 bg-nav-bg backdrop-blur-xl border border-border-primary rounded-2xl p-3 flex flex-col gap-1 z-[9998]">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-mono text-sm px-4 py-2.5 rounded-xl text-text-secondary hover:text-accent hover:bg-accent-dim lowercase"
+              >
+                {link.name}
+              </a>
+            ))}
             <a
-              key={link.name}
-              href={link.href}
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="font-mono text-sm px-4 py-2.5 rounded-xl text-text-secondary hover:text-accent hover:bg-accent-dim lowercase"
+              className="font-mono text-sm px-4 py-2.5 rounded-xl text-accent border border-accent/30 bg-accent/5 hover:bg-accent-dim lowercase mt-2 text-center"
             >
-              {link.name}
+              download resume
             </a>
-          ))}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMobileMenuOpen(false)}
-            className="font-mono text-sm px-4 py-2.5 rounded-xl text-accent border border-accent/30 bg-accent/5 hover:bg-accent-dim lowercase mt-2 text-center"
-          >
-            download resume
-          </a>
-        </div>
+          </div>
+        </>
       )}
 
       <GameModal isOpen={gameModalOpen} onClose={() => setGameModalOpen(false)} />
