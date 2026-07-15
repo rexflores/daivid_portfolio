@@ -81,7 +81,7 @@ export function Projects() {
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                priority={i === 0}
+                priority={i <= 1}
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               
