@@ -42,7 +42,7 @@ export function Projects() {
       description: "A fast and customizable QR Code Generator tool with a sleek interface. Instantly generate, customize, and download high-quality QR codes for URLs, text, and contact information.",
       techStack: ["TypeScript", "React", "CSS"],
       githubUrl: "https://github.com/rexflores/qrgenred",
-      liveUrl: "",
+      liveUrl: "https://qrgenred.vercel.app/",
       image: "/images/projects/qrgenred.png",
       featured: false,
     },
