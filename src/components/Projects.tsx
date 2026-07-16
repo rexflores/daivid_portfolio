@@ -38,6 +38,15 @@ export function Projects() {
       featured: false,
     },
     {
+      title: "QRGenRed",
+      description: "A fast and customizable QR Code Generator tool with a sleek interface. Instantly generate, customize, and download high-quality QR codes for URLs, text, and contact information.",
+      techStack: ["TypeScript", "React", "CSS"],
+      githubUrl: "https://github.com/rexflores/qrgenred",
+      liveUrl: "",
+      image: "/images/projects/qrgenred.png",
+      featured: false,
+    },
+    {
       title: "Resume Generator",
       description: "A web application that helps users easily create professional resumes. Users can input their details into a clean interface and export the final product as a perfectly formatted PDF. Includes multiple templates and live preview.",
       techStack: ["HTML5", "CSS3", "JavaScript", "jspdf"],
